@@ -1,0 +1,9 @@
+digraph Schema {
+  node [shape=record]
+  "first-name" [label="{ 1 | :user/first-name | felix | 1 | add }" shape=Mrecord]
+  "last-name" [label="{ 1 | :user/last-name | flores | 2 | add }" shape=Mrecord]
+  email_0 [label="{ 1 | :user/email | felixflores@gmail.com | 3 | add }" shape=Mrecord]
+  email_1 [label="{ 1 | :user/email | felix@neo.com | 4 | add }" shape=Mrecord]
+  twitter [label="{ 1 | :user/twitter | felixflores | 5 | add }" shape=Mrecord]
+  homepage [label="{ 1 | :user/homepage | http://felixflor.es | 6 | add }" shape=Mrecord]
+}

@@ -1,0 +1,28 @@
+digraph User {
+  node [shape=record]
+
+  ":db/ident0" [label="{ 1 | :db/ident | :user/first-name | 7 | add }" shape=Mrecord]
+  ":db/valueType0" [label="{ 1 | :db/valueType | :db.type/string | 8 | add }" shape=Mrecord]
+  ":db/cardinality0" [label="{ 1 | :db/cardinality | :db.cardinality/one | 9 | add }" shape=Mrecord]
+
+/*
+  ":db/ident1" [label="{ 2 | :db/ident | :user/last-name | 10 | add }" shape=Mrecord]
+  ":db/valueType1" [label="{ 2 | :db/valueType | :db.type/string | 11 | add }" shape=Mrecord]
+  ":db/cardinality1" [label="{ 2 | :db/cardinality | :db.cardinality/one | 12 | add }" shape=Mrecord]
+
+  ":db/ident2" [label="{ 3 | :db/ident | :user/email | 12 | add }" shape=Mrecord]
+  ":db/valueType2" [label="{ 3 | :db/valueType | :db.type/string | 14 | add }" shape=Mrecord]
+  ":db/cardinality2" [label="{ 3 | :db/cardinality | :db.cardinality/many | 15 | add }" shape=Mrecord]
+
+  ":db/ident3" [label="{ 4 | :db/ident | :user/twitter | 16 | add }" shape=Mrecord]
+  ":db/valueType3" [label="{ 4 | :db/valueType | :db.type/string | 17 | add }" shape=Mrecord]
+  ":db/cardinality3" [label="{ 4 | :db/cardinality | :db.cardinality/many | 18 | add }" shape=Mrecord]
+
+  ":db/ident4" [label="{ 5 | :db/ident | :user/homepage | 19 | add }" shape=Mrecord]
+  ":db/valueType4" [label="{ 5 | :db/valueType | :db.type/string | 20 | add }" shape=Mrecord]
+  ":db/cardinality4" [label="{ 5 | :db/cardinality | :db.cardinality/one | 21 | add }" shape=Mrecord]
+  */
+}
+
+
+
