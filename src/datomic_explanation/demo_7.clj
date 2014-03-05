@@ -1,7 +1,7 @@
-(ns datomic-explanation.demo-6
+(ns datomic-explanation.demo-7
   (:require [datomic.api :as d]))
 
-(def uri "datomic:mem://demo5")
+(def uri "datomic:mem://demo7")
 
 (d/create-database uri)
 
