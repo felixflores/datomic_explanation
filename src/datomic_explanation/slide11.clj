@@ -9,16 +9,15 @@
 
 (def database (d/db connection))
 
-(d/transact connection [[:db/add #db/id [:db.part/user -1] :user/first-name "felix"]
-                        [:db/add #db/id [:db.part/user -1] :user/last-name "last-name"]])
-
-(d/transact connection [[:db/add #db/id [:db.part/db -1] :db/ident :user/first-name]
-                        [:db/add :db.part/db :db.install/attribute #db/id [:db.part/db -1]]])
-
-(d/transact connection [[:db/add #db/id [:db.part/db -1] :db/ident :user/first-name]
-                        [:db/add #db/id [:db.part/db -1] :db/cardinality :db.cardinality/one]
-                        [:db/add #db/id [:db.part/db -1] :db/valueType :db.type/string]
-                        [:db/add :db.part/db :db.install/attribute #db/id [:db.part/db -1]]])
+;; (d/transact connection [[:db/add #db/id [:db.part/user] :user/first-name "felix"]])
+;;
+;; (d/transact connection [[:db/add #db/id [:db.part/db -1] :db/ident :user/first-name]
+;;                         [:db/add :db.part/db :db.install/attribute #db/id [:db.part/db -1]]])
+;;
+;; (d/transact connection [[:db/add #db/id [:db.part/db -1] :db/ident :user/first-name]
+;;                         [:db/add #db/id [:db.part/db -1] :db/cardinality :db.cardinality/one]
+;;                         [:db/add #db/id [:db.part/db -1] :db/valueType :db.type/string]
+;;                         [:db/add :db.part/db :db.install/attribute #db/id [:db.part/db -1]]])
 ;;
 ;; (d/transact connection [{:db/id #db/id[:db.part/db]
 ;;                          :db/ident :user/last-name
@@ -38,33 +37,40 @@
 ;;                          :db/cardinality :db.cardinality/one
 ;;                          :db/unique :db.unique/identity
 ;;                          :db.install/_attribute :db.part/db}])
-;;
-;;
-;; (def project-dir (System/getProperty "user.dir"))
-;;
-;; (def db-schema "src/datomic_explanation/slide11.edn")
-;;
-;; (def schema (->> (str project-dir "/" db-schema)
-;;                  slurp
-;;                  read-string))
-;;
-;; (d/transact connection schema)
-;;
-;; (d/transact connection [[:db/add #db/id [:db.part/user -1] :user/first-name "felix"]])
-;;
-;; (d/transact connection [{:db/id #db/id [:db.part/user -1]
-;;                          :user/last-name "flores"
-;;                          :user/email "felixflores@gmail.com"
-;;                          :user/twitter "felixflores"
-;;                          :user/homepage "http://felixflor.es"}])
-;;
-;; (d/q '[:find ?e
-;;        :where
-;;        [?e :user/first-name "felix"]]
-;;      database)
-;;
-;; (def database-now (d/db connection))
-;;
+
+
+(def project-dir (System/getProperty "user.dir"))
+
+(def db-schema "src/datomic_explanation/slide11.edn")
+
+(def schema (->> (str project-dir "/" db-schema)
+                 slurp
+                 read-string))
+
+(d/transact connection schema)
+
+(d/transact connection [[:db/add #db/id [:db.part/user -1] :user/first-name "felix"]])
+
+(d/transact connection [{:db/id #db/id [:db.part/user -1]
+                         :user/last-name "flores"
+                         :user/email "felixflores@gmail.com"
+                         :user/twitter "felixflores"
+                         :user/homepage "http://felixflor.es"}])
+
+(d/q '[:find ?e
+       :where
+       [?e :user/first-name "felix"
+        ?e :user/last-name "flores"]]
+     database)
+
+(def database-now (d/db connection))
+
+(d/q '[:find ?e
+       :where
+       [?e :user/first-name "felix"
+        ?e :user/last-name "flores"]]
+     database-now)
+
 ;; (d/q '[:find ?attr ?name
 ;;        :where
 ;;        [?attr :db/ident ?name]

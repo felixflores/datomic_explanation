@@ -1,93 +1,221 @@
-digraph User {
-  node [shape=record]
-  compound=true;
-
-  subgraph cluster_0 {
-    ":db/ident0" [label="{ 1 | :db/ident | :user/first-name | 7 | add }" shape=Mrecord]
-    ":db/valueType0" [label="{ 1 | :db/valueType | :db.type/string | 8 | add }" shape=Mrecord]
-    ":db/cardinality0" [label="{ 1 | :db/cardinality | :db.cardinality/one | 9 | add }" shape=Mrecord]
-  }
-
+digraph Schema {
+  node [shape=plaintext]
+  compound=true
   subgraph cluster_1 {
-    ":db/ident1" [label="{ 2 | :db/ident | :user/last-name | 10 | add }" shape=Mrecord]
-    ":db/valueType1" [label="{ 2 | :db/valueType | :db.type/string | 11 | add }" shape=Mrecord]
-    ":db/cardinality1" [label="{ 2 | :db/cardinality | :db.cardinality/one | 12 | add }" shape=Mrecord]
+    label=":db.part/db"
+
+    subgraph cluster_0 {
+      label="first-name attribute"
+      "first-name-ident" [label=<
+      <table border="0" cellborder="1" cellspacing="0">
+        <tr><td>23</td></tr>
+        <tr><td>:db/ident</td></tr>
+        <tr><td>:user/first-name</td></tr>
+        <tr><td>1244</td></tr>
+        <tr><td>add</td></tr>
+      </table>
+      >]
+
+      "first-name-cardinality" [label=<
+      <table border="0" cellborder="1" cellspacing="0">
+        <tr><td>23</td></tr>
+        <tr><td>:db/cardinality</td></tr>
+        <tr><td>:db.cardinality/one</td></tr>
+        <tr><td>1244</td></tr>
+        <tr><td>add</td></tr>
+      </table>
+      >]
+
+      "first-name-type" [label=<
+      <table border="0" cellborder="1" cellspacing="0">
+        <tr><td>23</td></tr>
+        <tr><td>:db/valueType</td></tr>
+        <tr><td>:db.type/string</td></tr>
+        <tr><td>1244</td></tr>
+        <tr><td>add</td></tr>
+      </table>
+      >]
+    }
+
+    subgraph cluster_2 {
+      label="last-name attribute"
+      "last-name-ident" [label=<
+      <table border="0" cellborder="1" cellspacing="0">
+        <tr><td>24</td></tr>
+        <tr><td>:db/ident</td></tr>
+        <tr><td>:user/first-name</td></tr>
+        <tr><td>1244</td></tr>
+        <tr><td>add</td></tr>
+      </table>
+      >]
+
+      "last-name-cardinality" [label=<
+      <table border="0" cellborder="1" cellspacing="0">
+        <tr><td>24</td></tr>
+        <tr><td>:db/cardinality</td></tr>
+        <tr><td>:db.cardinality/one</td></tr>
+        <tr><td>1244</td></tr>
+        <tr><td>add</td></tr>
+      </table>
+      >]
+
+      "last-name-type" [label=<
+      <table border="0" cellborder="1" cellspacing="0">
+        <tr><td>24</td></tr>
+        <tr><td>:db/valueType</td></tr>
+        <tr><td>:db.valueType/string</td></tr>
+        <tr><td>1244</td></tr>
+        <tr><td>add</td></tr>
+      </table>
+      >]
+    }
+
+    subgraph cluster_3 {
+      label="email attribute"
+      "email-ident" [label=<
+      <table border="0" cellborder="1" cellspacing="0">
+        <tr><td>24</td></tr>
+        <tr><td>:db/ident</td></tr>
+        <tr><td>:user/email</td></tr>
+        <tr><td>1244</td></tr>
+        <tr><td>add</td></tr>
+      </table>
+      >]
+
+      "email-cardinality" [label=<
+      <table border="0" cellborder="1" cellspacing="0">
+        <tr><td>24</td></tr>
+        <tr><td>:db/cardinality</td></tr>
+        <tr><td>:db.cardinality/many</td></tr>
+        <tr><td>1246</td></tr>
+        <tr><td>add</td></tr>
+      </table>
+      >]
+
+      "email-type" [label=<
+      <table border="0" cellborder="1" cellspacing="0">
+        <tr><td>24</td></tr>
+        <tr><td>:db/valueType</td></tr>
+        <tr><td>:db.value/string</td></tr>
+        <tr><td>1246</td></tr>
+        <tr><td>add</td></tr>
+      </table>
+      >]
+    }
+
+
+    attr23 [label=<
+    <table border="0" cellborder="1" cellspacing="0">
+      <tr><td>0</td></tr>
+      <tr><td>:db.install/attribute</td></tr>
+      <tr><td>23</td></tr>
+    </table>
+    >]
+
+    attr24 [label=<
+    <table border="0" cellborder="1" cellspacing="0">
+      <tr><td>0</td></tr>
+      <tr><td>:db.install/attribute</td></tr>
+      <tr><td>24</td></tr>
+    </table>
+    >]
+
+    attr25 [label=<
+    <table border="0" cellborder="1" cellspacing="0">
+      <tr><td>0</td></tr>
+      <tr><td>:db.install/attribute</td></tr>
+      <tr><td>24</td></tr>
+    </table>
+    >]
+
+    "first-name-ident" -> attr23
+    "first-name-cardinality" -> attr23
+    "first-name-type" -> attr23
+
+    "last-name-ident" -> attr24
+    "last-name-cardinality" -> attr24
+    "last-name-type" -> attr24
+
+    "email-ident" -> attr25
+    "email-cardinality" -> attr25
+    "email-type" -> attr25
   }
 
-  subgraph cluster_2 {
-    ":db/ident2" [label="{ 3 | :db/ident | :user/email | 12 | add }" shape=Mrecord]
-    ":db/valueType2" [label="{ 3 | :db/valueType | :db.type/string | 14 | add }" shape=Mrecord]
-    ":db/cardinality2" [label="{ 3 | :db/cardinality | :db.cardinality/many | 15 | add }" shape=Mrecord]
+  subgraph cluster_11 {
+    label="db.part/user"
+
+    subgraph cluster_13 {
+      label="Transaction 32142"
+
+      datom1 [label=<
+      <table border="0" cellborder="1" cellspacing="0">
+        <tr><td><font color="red">2132</font></td></tr>
+        <tr><td>:user/first-name</td></tr>
+        <tr><td>felix</td></tr>
+        <tr><td>32142</td></tr>
+        <tr><td>add</td></tr>
+      </table>
+      >]
+
+      datom2 [label=<
+      <table border="0" cellborder="1" cellspacing="0">
+        <tr><td><font color="red">2132</font></td></tr>
+        <tr><td>:user/last-name</td></tr>
+        <tr><td>flores</td></tr>
+        <tr><td>32142</td></tr>
+        <tr><td>add</td></tr>
+      </table>
+      >]
+
+      datom3 [label=<
+      <table border="0" cellborder="1" cellspacing="0">
+        <tr><td><font color="red">2132</font></td></tr>
+        <tr><td>:user/email</td></tr>
+        <tr><td>felix@neo.com</td></tr>
+        <tr><td>32142</td></tr>
+        <tr><td>add</td></tr>
+      </table>
+      >]
+
+    }
+
+    subgraph cluster_213 {
+      label="Transaction 543634"
+      datom4 [label=<
+      <table border="0" cellborder="1" cellspacing="0">
+        <tr><td><font color="red">2132</font></td></tr>
+        <tr><td>:user/email</td></tr>
+        <tr><td>felixflores@gmail.com</td></tr>
+        <tr><td>543634</td></tr>
+        <tr><td>add</td></tr>
+      </table>
+      >]
+    }
   }
 
-  subgraph cluster_3 {
-    ":db/ident3" [label="{ 4 | :db/ident | :user/twitter | 16 | add }" shape=Mrecord]
-    ":db/valueType3" [label="{ 4 | :db/valueType | :db.type/string | 17 | add }" shape=Mrecord]
-    ":db/cardinality3" [label="{ 4 | :db/cardinality | :db.cardinality/many | 18 | add }" shape=Mrecord]
+  subgraph cluster_99 {
+    shape=record
+    label="Entity 2132"
+    color="grey"
+    style="rounded"
+
+    firstname [label="{<fnl>first-name | <fnv>felix}", shape=Mrecord]
+    lastname [label="{<lnl>last-name | <lnv>flores}", shape=Mrecord]
+    email [label="{<enl>email | <env>felix@neo, felixflores@gmail.com}", shape=Mrecord]
   }
 
-  subgraph cluster_4 {
-    ":db/ident4" [label="{ 5 | :db/ident | :user/homepage | 19 | add }" shape=Mrecord]
-    ":db/valueType4" [label="{ 5 | :db/valueType | :db.type/string | 20 | add }" shape=Mrecord]
-    ":db/cardinality4" [label="{ 5 | :db/cardinality | :db.cardinality/one | 21 | add }" shape=Mrecord]
-  }
+  datom1 -> firstname:fnv [color=pink, arrowhead=none]
+  firstname:fnl -> attr23 [color=pink, arrowhead=none]
 
-  subgraph cluster_5 {
-    label="first-name"
-    attr_1 [label="{ 6 | :db.install/attribute | 1 | 22 | add }" shape=Mrecord]
-  }
+  datom2 -> lastname:lnv [color=pink, arrowhead=none]
+  lastname:lnl -> attr24 [color=pink, arrowhead=none]
 
-  subgraph cluster_6 {
-    label="last-name"
-    attr_2 [label="{ 6 | :db.install/attribute | 2 | 23 | add }" shape=Mrecord]
-  }
+  datom3 -> email:env [color=pink, arrowhead=none]
+  email:enl -> attr25 [color=pink, arrowhead=none]
 
-  subgraph cluster_7 {
-    label="email"
-    attr_3 [label="{ 6 | :db.install/attribute | 3 | 24 | add }" shape=Mrecord]
-  }
-
-  subgraph cluster_8 {
-    label="twitter"
-    attr_4 [label="{ 6 | :db.install/attribute | 4 | 25 | add }" shape=Mrecord]
-  }
-
-  subgraph cluster_9 {
-    label="homepage"
-    attr_5 [label="{ 6 | :db.install/attribute | 5 | 25 | add }" shape=Mrecord]
-  }
-
-  attr_6 [label="User Entity" shape="circle", style="dotted"]
-
-  ":db/ident0" -> attr_1 [lhead=cluster_5]
-  ":db/valueType0" -> attr_1 [lhead=cluster_5]
-  ":db/cardinality0" -> attr_1 [lhead=cluster_5]
-
-  ":db/ident1" -> attr_2 [lhead=cluster_6]
-  ":db/valueType1" -> attr_2 [lhead=cluster_6]
-  ":db/cardinality1" -> attr_2 [lhead=cluster_6]
-
-  ":db/ident2" -> attr_3 [lhead=cluster_7]
-  ":db/valueType2" -> attr_3 [lhead=cluster_7]
-  ":db/cardinality2" -> attr_3 [lhead=cluster_7]
-
-
-  ":db/ident3" -> attr_4 [lhead=cluster_8]
-  ":db/valueType3" -> attr_4 [lhead=cluster_8]
-  ":db/cardinality3" -> attr_4 [lhead=cluster_8]
-
-  ":db/ident4" -> attr_5 [lhead=cluster_9]
-  ":db/valueType4" -> attr_5 [lhead=cluster_9]
-  ":db/cardinality4" -> attr_5 [lhead=cluster_9]
-
-
-  attr_1 -> attr_6 [ltail=cluster_5, style="dotted"]
-  attr_2 -> attr_6 [ltail=cluster_6, style="dotted"]
-  attr_3 -> attr_6 [ltail=cluster_7, style="dotted"]
-  attr_4 -> attr_6 [ltail=cluster_8, style="dotted"]
-  attr_5 -> attr_6 [ltail=cluster_9, style="dotted"]
+  datom4 -> email:env [color=pink, arrowhead=none]
+  email:enl -> attr25 [color=pink, arrowhead=none]
 }
 
-
-
+// Demo 6
 

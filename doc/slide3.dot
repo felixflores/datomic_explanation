@@ -8,12 +8,8 @@ digraph Schema {
   </table>
   >]
 
-  datom [label=<
-  <table border="0" cellborder="1" cellspacing="0">
-    <tr><td>entity-id</td></tr>
-    <tr><td>attribute</td></tr>
-    <tr><td>value</td></tr>
-  </table>
-  >]
+  db [shape="circle"]
+  "first-name" -> db
 }
 
+// Demo 1

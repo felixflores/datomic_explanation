@@ -1,5 +1,13 @@
 digraph {
-  node [shape=record]
+  node [shape=plaintext]
   label="Datom"
-  datom [label="{ entity-id | attribute | value | transaction-id | add/retract }" shape=Mrecord]
+  datom [label=<
+  <table border="0" cellborder="1" cellspacing="0">
+    <tr><td>entity-id</td></tr>
+    <tr><td>attribute</td></tr>
+    <tr><td>value</td></tr>
+    <tr><td>transaction-id</td></tr>
+    <tr><td>add/retract</td></tr>
+  </table>
+  >]
 }
