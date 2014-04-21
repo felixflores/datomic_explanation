@@ -170,7 +170,7 @@
 			<integer>77</integer>
 			<key>Points</key>
 			<array>
-				<string>{289, 205}</string>
+				<string>{294, 203}</string>
 				<string>{379, 162}</string>
 				<string>{259, 136}</string>
 			</array>
@@ -359,7 +359,7 @@
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{122, 114}, {217, 126}}</string>
+			<string>{{122, 114}, {231, 126}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>FitText</key>
@@ -412,8 +412,8 @@
 \f0\fs24 \cf0 (d/q '[:find ?ident\
        :in $ ?email\
        :where\
-       [?id :email ?email]\
-       [?id :db/ident ?ident]]\
+       [$ ?id :email ?email]\
+       [$ ?id :db/ident ?ident]]\
      my-database\
      "sara@example.com")\
 \
@@ -477,7 +477,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2014-04-21 00:42:12 +0000</string>
+	<string>2014-04-21 05:15:09 +0000</string>
 	<key>Modifier</key>
 	<string>Felix Flores</string>
 	<key>NotesVisible</key>

@@ -26,3 +26,8 @@
      "sara@example.com")
 
 ;=> #{[sara]}
+
+(d/q '[:find ?email
+       :where
+       [_ :email ?email]]
+     my-database)
